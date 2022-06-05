@@ -1,4 +1,4 @@
-package com.example.textrecognizer;
+package com.example.lenz;
 
 import android.content.Context;
 

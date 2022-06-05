@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "757536620758",
+    "project_id": "lenz-555a2",
+    "storage_bucket": "lenz-555a2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:757536620758:android:00a64624a99f4a21058977",
+        "android_client_info": {
+          "package_name": "com.example.lenz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "757536620758-gckq8rgfo8oshfu8gm26eti2792k0kme.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXsaN62ms0lr8gklcGvZ8KLKcphTdSlWs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "757536620758-gckq8rgfo8oshfu8gm26eti2792k0kme.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
