@@ -8,10 +8,13 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
+
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
+
 
 public class MainActivity extends AppCompatActivity {
     private Button captureBtn;
@@ -22,18 +25,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         captureBtn = findViewById(R.id.captureBtn);
 
-        if(ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
-            ActivityCompat.requestPermissions(MainActivity.this,new String[]{
+        if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(MainActivity.this, new String[]{
                     Manifest.permission.CAMERA
-            },REQUEST_CAMERA_CODE);
+            }, REQUEST_CAMERA_CODE);
         }
 
         captureBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,ScannerActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(MainActivity.this,ScannerActivity.class);
+//                startActivity(intent);
+                CropImage.activity().setGuidelines(CropImageView.Guidelines.ON).start(MainActivity.this);
             }
         });
     }
+//    @Override
+//
+//
+//    }
 }
