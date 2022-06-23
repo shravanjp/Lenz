@@ -7,6 +7,8 @@
     android:background="@color/white"
     tools:context=".MainActivity">
 
+
+
     <ImageView
         android:id="@+id/logo"
         android:layout_width="200dp"
@@ -14,6 +16,7 @@
         android:src="@drawable/scanner"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="170dp"/>
+
 
     <TextView
         android:id="@+id/tagline"
