@@ -159,9 +159,7 @@ public class MainActivity extends AppCompatActivity {
                         result.append("\n");
                     }
                     Intent myIntent = new Intent(MainActivity.this, ResultActivity.class);
-                    Log.i("IText","Before adding Textblock");
                     myIntent.putExtra("recognizedText", tempBlockText);
-                    Log.i("IBitmap","Before adding Bitmap");
 
                     ByteArrayOutputStream _bs = new ByteArrayOutputStream();
                     bitmap.compress(Bitmap.CompressFormat.JPEG, 0, _bs);
