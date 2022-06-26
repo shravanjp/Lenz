@@ -15,8 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TextRecognizer">
         <activity
-            android:name=".ResultActivity"
+            android:name=".EditActivity"
             android:exported="false" />
+        <activity
+            android:name=".ResultActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
@@ -24,7 +28,6 @@
             android:name=".MainActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".SplashActivity"
             android:exported="true"

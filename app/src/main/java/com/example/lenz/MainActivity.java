@@ -30,8 +30,10 @@ import com.google.mlkit.vision.text.TextRecognition;
 import com.google.mlkit.vision.text.TextRecognizer;
 import com.google.mlkit.vision.text.TextRecognizerOptions;
 import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageActivity;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 
@@ -45,16 +47,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        detectBtn = findViewById(R.id.captureBtn);
         captureBtn = findViewById(R.id.captureBtn);
-
-//        detectBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                detectText();
-//            }
-//        });
-
         captureBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,17 +64,14 @@ public class MainActivity extends AppCompatActivity {
         CropImage.activity().setGuidelines(CropImageView.Guidelines.ON).start(MainActivity.this);
     }
 
-    private boolean checkPermission(){
-        int cameraPermission = ContextCompat.checkSelfPermission(MainActivity.this,Manifest.permission.CAMERA);
-        return cameraPermission == PackageManager.PERMISSION_GRANTED;
-    }
-
     private void requestPermission(){
         ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.CAMERA},REQUEST_CAMERA_CODE);
     }
 
-
-
+    private boolean checkPermission(){
+        int cameraPermission = ContextCompat.checkSelfPermission(MainActivity.this,Manifest.permission.CAMERA);
+        return cameraPermission == PackageManager.PERMISSION_GRANTED;
+    }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -102,27 +92,31 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-//        if(requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK){
-//            /*
+//        if(requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+//            Toast.makeText(MainActivity.this,"Camera",Toast.LENGTH_SHORT).show();
+//            Log.i("CAMERA","Camera is working");
 //            Bundle extras = data.getExtras();
 //            bitmap = (Bitmap) extras.get("data");
-//            captureTv.setImagebitmap(bitmap);
-//            */
-
-            if(requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE){
-                CropImage.ActivityResult result = CropImage.getActivityResult(data);
-                if(resultCode == RESULT_OK){
-                    Uri resultUri = result.getUri();
-                    try {
-                        bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(),resultUri);
-                        detectText(bitmap);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
+//            detectText(bitmap);
 //        }
 
+
+              if(requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE){
+                try {
+                    CropImage.ActivityResult result = CropImage.getActivityResult(data);
+                    if (resultCode == RESULT_OK) {
+                        Uri resultUri = result.getUri();
+                        bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), resultUri);
+                        detectText(bitmap);
+                    }
+                }catch (IOException e) {
+                        Toast.makeText(MainActivity.this,"Some unknown Error",Toast.LENGTH_SHORT).show();
+                        e.printStackTrace();
+                    }
+            }
+            else{
+                Log.i("resultCode",String.valueOf(resultCode));
+            }
     }
 //
 //    private void getTextFromImage(Bitmap bitmap){
@@ -130,38 +124,59 @@ public class MainActivity extends AppCompatActivity {
 //    }
 
         private void detectText(Bitmap bitmap){
+        Log.i("1","Inside detectText");
         InputImage image = InputImage.fromBitmap(this.bitmap,0);
+            Log.i("2","After Input image");
         TextRecognizer recognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS);
         Task<Text> result = recognizer.process(image).addOnSuccessListener(new OnSuccessListener<Text>() {
             @Override
-            public void onSuccess(Text text) {
-                String blockText = null;
-                String tempBlockText = null;
+            public void onSuccess(@NonNull Text text) {
+                String blockText = "";
+                String tempBlockText = "";
                 StringBuilder result = new StringBuilder();
-                for(Text.TextBlock block: text.getTextBlocks()){
-                    blockText = block.getText();
-                    Point[] blockCornerPoint = block.getCornerPoints();
-                    Rect blockFrame = block.getBoundingBox();
-                    for(Text.Line line: block.getLines()){
-                        String lineText = line.getText();
-                        Point[] linearCornerPoint = line.getCornerPoints();
-                        Rect linRect = line.getBoundingBox();
-                        for(Text.Element element: line.getElements()){
-                            String elementText = element.getText();
-                            result.append(elementText);
+                try {
+                    for(Text.TextBlock block: text.getTextBlocks()){
+                        blockText = block.getText();
+                        Point[] blockCornerPoint = block.getCornerPoints();
+                        Rect blockFrame = block.getBoundingBox();
+
+                        Log.i("mid0","checking");
+                        for(Text.Line line: block.getLines()){
+                            Log.i("mid1","checking");
+
+                            String lineText = line.getText();
+                            Point[] linearCornerPoint = line.getCornerPoints();
+                            Rect linRect = line.getBoundingBox();
+                            for(Text.Element element: line.getElements()){
+                                Log.i("mid2","checking");
+
+                                String elementText = element.getText();
+                                result.append(elementText);
+                            }
+                            result.append("\n");
                         }
+                        tempBlockText = tempBlockText +blockText+"\n";
                         result.append("\n");
-//                        resultTv.setText(blockText);
-                            tempBlockText = tempBlockText +blockText+"\n";
-//                        Log.i("a",blockText);
                     }
+                    Intent myIntent = new Intent(MainActivity.this, ResultActivity.class);
+                    Log.i("IText","Before adding Textblock");
+                    myIntent.putExtra("recognizedText", tempBlockText);
+                    Log.i("IBitmap","Before adding Bitmap");
 
+                    ByteArrayOutputStream _bs = new ByteArrayOutputStream();
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 0, _bs);
+                    myIntent.putExtra("byteArray", _bs.toByteArray());
+//                    startActivity(myIntent);
 
+//                    myIntent.putExtra("capturedImage",bitmap);
+                    Log.i("IResult","After  adding Bitmap before start");
+                    startActivity(myIntent);
+                    Log.i("IResult1","After Start");
+                }catch (Exception e){
+                    Log.i("exp",e.toString());
+                    Toast.makeText(MainActivity.this,"Failed to detect text from Image",Toast.LENGTH_SHORT).show();
                 }
-                Intent myIntent = new Intent(MainActivity.this, ResultActivity.class);
-                myIntent.putExtra("recognizedText", tempBlockText);
-                myIntent.putExtra("capturedImage",bitmap);
-                startActivity(myIntent);
+
 
             }
         }).addOnFailureListener(new OnFailureListener() {

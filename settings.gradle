@@ -18,5 +18,6 @@ dependencyResolutionManagement {
         }
     }
 }
+
 rootProject.name = "Lenz"
 include ':app'
