@@ -38,7 +38,7 @@ import java.io.IOException;
 
 
 public class MainActivity extends AppCompatActivity {
-    private Button captureBtn,detectBtn;
+    private Button captureBtn,historyBtn;
     private Bitmap bitmap;
     private static final int REQUEST_CAMERA_CODE = 100;
     private static final int REQUEST_IMAGE_CAPTURE = 1;
@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         captureBtn = findViewById(R.id.captureBtn);
+        historyBtn = findViewById(R.id.historyBtn);
         captureBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,6 +57,14 @@ public class MainActivity extends AppCompatActivity {
                 }else{
                     requestPermission();
                 }
+            }
+        });
+
+        historyBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent historyIntent = new Intent(MainActivity.this,SavedDetailsActivity.class);
+                startActivity(historyIntent);
             }
         });
     }
@@ -162,7 +171,7 @@ public class MainActivity extends AppCompatActivity {
                     myIntent.putExtra("recognizedText", tempBlockText);
 
                     ByteArrayOutputStream _bs = new ByteArrayOutputStream();
-                    bitmap.compress(Bitmap.CompressFormat.JPEG, 0, _bs);
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 20, _bs);
                     myIntent.putExtra("byteArray", _bs.toByteArray());
 //                    startActivity(myIntent);
 
