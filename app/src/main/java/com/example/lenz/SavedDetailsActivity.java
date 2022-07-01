@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Adapter;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -34,11 +37,29 @@ public class SavedDetailsActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String content = scannedTextList.get(position).get("content");
-                Intent editIntent = new Intent(SavedDetailsActivity.this,EditActivity.class);
-                editIntent.putExtra("recognizedText",content);
-                startActivity(editIntent);
+                String title = scannedTextList.get(position).get("title");
+                String time = scannedTextList.get(position).get("time");
+                String pos = String.valueOf(position);
+                Intent updateIntent = new Intent(SavedDetailsActivity.this,EditActivity.class);
+                updateIntent.putExtra("recognizedText",content);
+                updateIntent.putExtra("title",title);
+                updateIntent.putExtra("time",time);
+                updateIntent.putExtra("upd","1");
+                Log.i("test",pos);
+                startActivity(updateIntent);
+                Log.i("testAfter",pos);
+
             }
         });
 
+        lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener(){
+
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(SavedDetailsActivity.this,"Clicked",Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        });
     }
+
 }

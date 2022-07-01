@@ -15,9 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TextRecognizer">
         <activity
-            android:name=".SavedDetailsActivity"
-            android:screenOrientation="portrait"
+            android:name=".UpdateActivity"
             android:exported="false" />
+        <activity
+            android:name=".SavedDetailsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".EditActivity"
             android:exported="false" />

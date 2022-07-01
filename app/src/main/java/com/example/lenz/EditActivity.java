@@ -24,9 +24,9 @@ import java.util.Locale;
 
 public class EditActivity extends AppCompatActivity {
     private EditText editText;
-    private Button copyBtn, backBtn;
+    private Button copyBtn, updateBtn, deleteBtn;
     private TextToSpeech textToSpeech;
-    private ImageView speaker,share,save,history;
+    private ImageView speaker,share,save,history,clipboard;
     private DBHandler dbHandler;
     Boolean speakerFlag = false;
     @Override
@@ -36,7 +36,9 @@ public class EditActivity extends AppCompatActivity {
 
         editText = findViewById(R.id.editText);
         copyBtn = findViewById(R.id.copyBtn);
-        backBtn = findViewById(R.id.backBtn);
+        updateBtn = findViewById(R.id.updateBtn);
+        deleteBtn = findViewById(R.id.deleteBtn);
+        clipboard = findViewById(R.id.clipboard);
         speaker = findViewById(R.id.speaker);
         save = findViewById(R.id.saveToDevice);
         history = findViewById(R.id.history);
@@ -45,6 +47,50 @@ public class EditActivity extends AppCompatActivity {
 
 
         String resultText = getIntent().getStringExtra("recognizedText");
+        String upd = getIntent().getStringExtra("upd");
+        String content = editText.getText().toString();
+
+        if(upd.equals("1")){
+            updateBtn.setVisibility(View.VISIBLE);
+            save.setVisibility(View.GONE);
+            copyBtn.setVisibility(View.GONE);
+            deleteBtn.setVisibility(View.VISIBLE);
+            clipboard.setVisibility(View.VISIBLE);
+
+            String title = getIntent().getStringExtra("title");
+            String time = getIntent().getStringExtra("time");
+
+            clipboard.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    String contentY = editText.getText().toString();
+                    contentY.trim();
+                    copyToClipBoard(contentY);
+                }
+            });
+
+            updateBtn.setOnClickListener(new View.OnClickListener() {
+                @RequiresApi(api = Build.VERSION_CODES.O)
+                @Override
+                public void onClick(View view) {
+                    updateDatabase(title,content,time);
+                }
+            });
+
+            deleteBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    deleteRecord(time);
+                }
+            });
+        }
+        else{
+            updateBtn.setVisibility(View.GONE);
+            save.setVisibility(View.VISIBLE);
+            copyBtn.setVisibility(View.VISIBLE);
+            deleteBtn.setVisibility(View.GONE);
+            clipboard.setVisibility(View.GONE);
+        }
         resultText=resultText+"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
         editText.setText(resultText);
 
@@ -53,13 +99,6 @@ public class EditActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String editedText = editText.getText().toString();
                 copyToClipBoard(editedText);
-            }
-        });
-
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
             }
         });
 
@@ -110,6 +149,30 @@ public class EditActivity extends AppCompatActivity {
 
     }
 
+    private void deleteRecord(String time) {
+            if(dbHandler.deleteScannedText(time)){
+                Intent intent = new Intent(EditActivity.this, MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private void updateDatabase(String title, String content, String time) {
+        content = editText.getText().toString();
+        content.trim();
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+        String newRecordTime = dtf.format(now);
+
+        if(dbHandler.updateScannedText(title,content,time,newRecordTime)){
+            Intent intent = new Intent(EditActivity.this, MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        }
+
+    }
+
     private void showSaveToDeviceDialog() {
         final Dialog dialog = new Dialog(EditActivity.this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -137,6 +200,8 @@ public class EditActivity extends AppCompatActivity {
 
         dialog.show();
     }
+
+
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void insertToDatabase(String titleOfScannedText) {
@@ -166,7 +231,7 @@ public class EditActivity extends AppCompatActivity {
     public void onPause(){
         if(textToSpeech !=null){
             textToSpeech.stop();
-            textToSpeech.shutdown();
+//            textToSpeech.shutdown();
         }
         super.onPause();
     }

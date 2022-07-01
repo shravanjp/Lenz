@@ -64,17 +64,25 @@ public class DBHandler extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void deleteScannedText(String id){
+    public boolean updateScannedText(String title,String content,String time,String newTime){
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "DELETE FROM " + TABLE_NAME + " WHERE ID_COL= " + id;
-        db.execSQL(query);
+        ContentValues values = new ContentValues();
+        values.put(TITLE_COL, title);
+        values.put(CONTENT_COL, content);
+        values.put(TIME_COL, newTime);
+        db.update(TABLE_NAME, values, "time=?", new String[]{time});
+        db.close();
+        return true;
     }
 
-    public void deleteAllScannedText(){
+    public boolean deleteScannedText(String time){
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "DELETE FROM " + TABLE_NAME;
-        db.execSQL(query);
+        db.delete(TABLE_NAME, "time=?", new String[]{time});
+        db.close();
+        return true;
     }
+
+
 
 
     @Override

@@ -26,7 +26,7 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/purple_500"
+                android:background="@color/purple_700"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -46,45 +46,56 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
                     android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:id="@+id/clipboard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="7dp"
+                        android:src="@drawable/clipboard"
+                        android:visibility="gone" />
 
                     <ImageView
                         android:id="@+id/history"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="7dp"
                         android:layout_gravity="center_vertical"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginEnd="7dp"
                         android:src="@drawable/history" />
 
                     <ImageView
                         android:id="@+id/speaker"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="7dp"
-                        android:layout_marginStart="7dp"
                         android:layout_gravity="center_vertical"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginEnd="7dp"
                         android:src="@drawable/speaker" />
 
                     <ImageView
                         android:id="@+id/saveToDevice"
                         android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:layout_marginStart="7dp"
                         android:layout_marginEnd="7dp"
-                        android:layout_gravity="center_vertical"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/save" />
+                        android:src="@drawable/save"
+                        android:visibility="visible" />
 
                     <ImageView
                         android:id="@+id/share"
-                        android:layout_marginEnd="12dp"
-                        android:layout_marginStart="7dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginEnd="12dp"
                         android:src="@drawable/share" />
-
 
 
                 </LinearLayout>
@@ -177,11 +188,29 @@
                 app:backgroundTint="@color/black"/>
 
             <Button
-                android:id="@+id/backBtn"
+                android:id="@+id/updateBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Back"
+                android:text="Update"
                 android:textSize="20sp"
+                android:visibility="gone"
+                android:layout_weight="1"
+                android:layout_marginStart="35dp"
+                android:layout_marginEnd="35dp"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:background="@drawable/capture_btn"
+                app:backgroundTint="@color/black"/>
+
+            <Button
+                android:id="@+id/deleteBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Delete"
+                android:textSize="20sp"
+                android:visibility="gone"
                 android:layout_weight="1"
                 android:layout_marginStart="35dp"
                 android:layout_marginEnd="35dp"
