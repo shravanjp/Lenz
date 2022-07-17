@@ -23,7 +23,7 @@ Lenz is an android application written in Java. This app scans the text from the
 
 ## Installation
 
-Install my-project using git
+Install my project using git
 
 ```bash
   git clone https://github.com/shravanjp/Lenz.git
