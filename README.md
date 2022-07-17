@@ -3,7 +3,7 @@
 Lenz is an android application written in Java. This app scans the text from the picture and converts into text. Currently it only supports English language. It also has the feature like, user can save, share, update the recognized text. It also has text to speech feature.
 
 
-![Logo](https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/lenz.png = 250x250)
+<img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/lenz.png" width="100" height="100">
 
 
 ## Tech Stack
