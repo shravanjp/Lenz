@@ -44,6 +44,11 @@ Image Cropper
 ## Screenshots
 
 <img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/spalshscreen.jpg" width="150" height="300">
+<img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/homescreen.jpg" width="150" height="300">
+<img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/cropimage.jpg" width="150" height="300">
+<img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/previewpage.jpg" width="150" height="300">
+<img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/savetodevice.jpg" width="150" height="300">
+<img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/saveddetails.jpg" width="150" height="300">
 
 
 ## Demo
