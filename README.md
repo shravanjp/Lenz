@@ -45,12 +45,12 @@ Image Cropper
 
 <table>
   <tr>
-     <td style="text-align:center">Splash Screem</td>
-     <td>Home Screen</td>
-     <td>Image Cropping Page</td>
-    <td>Preview Page</td>
-    <td>Save to Device Dialog Box</td>
-    <td>Saved Details Page</td>
+     <th style="text-align:center">Splash Screem</th>
+     <th style="text-align:center">Home Screen</th>
+     <th style="text-align:center">Image Cropping Page</th>
+    <th style="text-align:center">Preview Page</th>
+    <th style="text-align:center">Save to Device Dialog Box</th>
+    <th style="text-align:center">Saved Details Page</th>
   </tr>
   <tr>
     <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/spalshscreen.jpg" width="170" height="300"></td>
