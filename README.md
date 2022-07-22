@@ -48,6 +48,9 @@ Image Cropper
      <th style="text-align:center">Splash Screen</th>
      <th style="text-align:center">Home Screen</th>
      <th style="text-align:center">Image Cropping Page</th>
+    </tr>
+    <p></p>
+    <tr>
     <th style="text-align:center">Preview Page</th>
     <th style="text-align:center">Save to Device Dialog Box</th>
     <th style="text-align:center">Saved Details Page</th>
