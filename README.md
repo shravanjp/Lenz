@@ -50,9 +50,9 @@ Image Cropper
      <th style="text-align:center">Image Cropping Page</th>
     </tr>
     <tr>
-    <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/spalshscreen.jpg" width="200" height="300"></td>
-     <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/homescreen.jpg" width="200" height="300"></td>
-     <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/cropimage.jpg" width="200" height="300"></td>
+    <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/spalshscreen.jpg" width="200" height="320"></td>
+     <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/homescreen.jpg" width="200" height="320"></td>
+     <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/cropimage.jpg" width="200" height="320"></td>
     </tr>
    </table>
    <table>
@@ -62,9 +62,9 @@ Image Cropper
       <th style="text-align:center">Saved Details Page</th>
     </tr>
     <tr>
-    <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/previewpage.jpg" width="200" height="300"></td>
-    <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/savetodevice.jpg" width="200" height="300"></td>
-    <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/saveddetails.jpg" width="200" height="300"></td>
+    <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/previewpage.jpg" width="200" height="320"></td>
+    <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/savetodevice.jpg" width="200" height="320"></td>
+    <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/saveddetails.jpg" width="200" height="320"></td>
     </tr>
  
  </table>
