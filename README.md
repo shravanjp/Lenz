@@ -41,27 +41,26 @@ Image Cropper
   implementation "com.theartofdev.edmodo:android-image-cropper:2.8.0"
 ```
     
-#### Flutter App Screenshots
+#### Screenshots
 
 <table>
   <tr>
-    <td>First Screen Page</td>
-     <td>Holiday Mention</td>
-     <td>Present day in purple and selected day in pink</td>
+     <td style="text-align:center">Splash Screem</td>
+     <td>Home Screen</td>
+     <td>Image Cropping Page</td>
+    <td>Preview Page</td>
+    <td>Save to Device Dialog Box</td>
+    <td>Saved Details Page</td>
   </tr>
   <tr>
-    <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/spalshscreen.jpg" width="270" height="480"></td>
-    <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/homescreen.jpg" width="270" height="480"></td>
-    <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/cropimage.jpg" width="270" height="480"></td>
+    <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/spalshscreen.jpg" width="170" height="480"></td>
+    <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/homescreen.jpg" width="170" height="480"></td>
+    <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/cropimage.jpg" width="170" height="480"></td>
+    <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/previewimage.jpg" width="170" height="480"></td>
+    <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/savetodevice.jpg" width="170" height="480"></td>
+    <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/saveddetails.jpg" width="170" height="480"></td>
   </tr>
  </table>
-
-<img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/spalshscreen.jpg" width="150" height="300">
-<img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/homescreen.jpg" width="150" height="300">
-<img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/cropimage.jpg" width="150" height="300">
-<img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/previewpage.jpg" width="150" height="300">
-<img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/savetodevice.jpg" width="150" height="300">
-<img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/saveddetails.jpg" width="150" height="300">
 
 
 ## Demo
