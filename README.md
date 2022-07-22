@@ -45,7 +45,7 @@ Image Cropper
 
 <table>
   <tr>
-     <th style="text-align:center">Splash Screem</th>
+     <th style="text-align:center">Splash Screen</th>
      <th style="text-align:center">Home Screen</th>
      <th style="text-align:center">Image Cropping Page</th>
     <th style="text-align:center">Preview Page</th>
