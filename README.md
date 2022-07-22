@@ -46,23 +46,30 @@ Image Cropper
 <table>
   <tr>
      <th style="text-align:center">Splash Screen</th>
-     <th style="text-align:center">Home Screen</th>
-     <th style="text-align:center">Image Cropping Page</th>
+     <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/spalshscreen.jpg" width="200" height="300"></td>
     </tr>
-    <p></p>
+    <tr>
+     <th style="text-align:center">Home Screen</th>
+     <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/homescreen.jpg" width="200" height="300"></td>
+    </tr>
+    <tr>
+     <th style="text-align:center">Image Cropping Page</th>
+     <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/cropimage.jpg" width="200" height="300"></td>
+    </tr>
     <tr>
     <th style="text-align:center">Preview Page</th>
-    <th style="text-align:center">Save to Device Dialog Box</th>
-    <th style="text-align:center">Saved Details Page</th>
-  </tr>
-  <tr>
-    <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/spalshscreen.jpg" width="200" height="300"></td>
-    <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/homescreen.jpg" width="200" height="300"></td>
-    <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/cropimage.jpg" width="200" height="300"></td>
     <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/previewpage.jpg" width="200" height="300"></td>
+    </tr>
+    <tr>
+    <th style="text-align:center">Save to Device Dialog Box</th>
     <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/savetodevice.jpg" width="200" height="300"></td>
-    <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/saveddetails.jpg" width="200" height="300"></td>
+    </tr>
+    <tr>
+    <th style="text-align:center">Saved Details Page</th>
+    <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/savedetails.jpg" width="200" height="300"></td>
   </tr>
+  
+ 
  </table>
 
 
