@@ -54,7 +54,8 @@ Image Cropper
      <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/homescreen.jpg" width="200" height="300"></td>
      <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/cropimage.jpg" width="200" height="300"></td>
     </tr>
-    <p></p>
+   </table>
+   <table>
     <tr>
      <th style="text-align:center">Preview Page</th>
      <th style="text-align:center">Save to Device Dialog Box</th>
