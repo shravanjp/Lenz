@@ -43,7 +43,7 @@ Image Cropper
     
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/spalshscreen.jpg)
 
 
 ## Demo
