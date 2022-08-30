@@ -41,12 +41,34 @@ Image Cropper
   implementation "com.theartofdev.edmodo:android-image-cropper:2.8.0"
 ```
     
-## Screenshots
+#### Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+<table>
+  <tr>
+     <th style="text-align:center">Splash Screen</th>
+      <th style="text-align:center">Home Screen</th>
+     <th style="text-align:center">Image Cropping Page</th>
+    </tr>
+    <tr>
+    <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/spalshscreen.jpg" width="200" height="320"></td>
+     <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/homescreen.jpg" width="200" height="320"></td>
+     <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/cropimage.jpg" width="200" height="320"></td>
+    </tr>
+   </table>
+   <table>
+    <tr>
+     <th style="text-align:center">Preview Page</th>
+     <th style="text-align:center">Save to Device Dialog Box</th>
+      <th style="text-align:center">Saved Details Page</th>
+    </tr>
+    <tr>
+    <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/previewpage.jpg" width="200" height="320"></td>
+    <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/savetodevice.jpg" width="200" height="320"></td>
+    <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/saveddetails.jpg" width="200" height="320"></td>
+    </tr>
+ 
+ </table>
 
 
-## Demo
 
-Insert gif or link to demo
 
