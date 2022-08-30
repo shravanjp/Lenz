@@ -24,7 +24,7 @@ Lenz is an **android application** written in Java. This app scans the text from
 
 ## Download
 
-[<img src="https://raw.githubusercontent.com/Varshithvhegde/Scan_Me/master/direct-apk-download.png" alt="Direct apk download" height="80">](https://github.com/shravanjp/Lenz/releases/tag/V1.0.0) 
+[<img src="https://raw.githubusercontent.com/Varshithvhegde/Scan_Me/master/direct-apk-download.png" alt="Direct apk download" height="80">](https://github.com/shravanjp/Lenz/releases/download/V1.0.0/app-debug.apk) 
 
 
 ## Installation
