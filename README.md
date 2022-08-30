@@ -1,6 +1,8 @@
 # Lenz-An OCR Application
 
-Lenz is an android application written in Java. This app scans the text from the picture and converts into text. Currently it only supports English language. It also has the feature like, user can save, share, update the recognized text. It also has text to speech feature.
+Lenz is an **android application** written in Java. This app scans the text from the picture and converts into text. Currently it only supports English language. It also has the feature like, user can save, share, update the recognized text. It also has text to speech feature.
+
+![GitHub last commit](https://img.shields.io/github/last-commit/shravanjp/Lenz) ![GitHub repo size](https://img.shields.io/github/repo-size/shravanjp/Lenz) [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
 
 <img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/lenz.png" width="100" height="100">
@@ -69,6 +71,10 @@ Image Cropper
  
  </table>
 
+## 🔗 Links
 
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shravan-j-poojary)
+
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://shravanjp.com/)
 
 
